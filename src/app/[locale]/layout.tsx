@@ -26,7 +26,10 @@ export const metadata = {
   title: "BuonaPharma",
   description: "Laboratoire pharmaceutique — Yaoundé, Cameroun",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
     apple: "/apple-touch-icon.png",
   },
 };

@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
+import { Logo } from "@/components/Logo";
 
 const NAV_ITEMS = [
   { href: "/produits", key: "products" },
@@ -20,7 +20,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center">
-          <Image src="/logo.png" alt="BuonaPharma" width={130} height={48} priority className="h-12 w-auto" />
+          <Logo variant="default" />
         </Link>
 
         <nav className="flex flex-wrap items-center gap-6">

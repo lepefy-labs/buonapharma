@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="bg-forest text-paper">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-3">
-          <Image src="/logo-white.png" alt="BuonaPharma" width={130} height={48} className="h-10 w-auto" />
+          <Logo variant="reversed" />
           <p className="max-w-xs text-sm text-paper/80">{t("tagline")}</p>
         </div>
 
