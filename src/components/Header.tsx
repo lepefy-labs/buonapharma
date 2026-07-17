@@ -15,6 +15,8 @@ const PRODUCT_CATEGORIES = [
 const NAV_ITEMS = [
   { href: "/forum", key: "forum" },
   { href: "/a-propos", key: "about" },
+  { href: "/devenir-partenaire", key: "partners" },
+  { href: "/travailler-avec-nous", key: "careers" },
   { href: "/contact", key: "contact" },
 ] as const;
 
@@ -29,11 +31,12 @@ export function Header() {
   const [productsOpen, setProductsOpen] = useState(false);
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b border-ink/10 transition-colors duration-300 ${
-        scrolled ? "bg-paper/80 backdrop-blur-sm" : "bg-paper/95 backdrop-blur"
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-ink/10">
+      <div
+        className={`transition-colors duration-300 ${
+          scrolled ? "bg-paper/80 backdrop-blur-sm" : "bg-paper/95 backdrop-blur"
+        }`}
+      >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
           <Logo variant="default" />
@@ -117,10 +120,11 @@ export function Header() {
           </span>
         </button>
       </div>
+      </div>
 
       <div
         id="mobile-nav"
-        className={`fixed inset-x-0 top-16 bottom-0 z-40 flex flex-col gap-1 overflow-y-auto bg-paper px-6 py-8 transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 z-50 flex flex-col overflow-y-auto bg-paper px-6 pb-8 pt-24 transition-all duration-300 md:hidden ${
           mobileOpen
             ? "pointer-events-auto translate-x-0 opacity-100"
             : "pointer-events-none translate-x-4 opacity-0"
@@ -129,12 +133,12 @@ export function Header() {
         <span className="font-mono text-xs uppercase tracking-widest text-gold">
           {nav("products")}
         </span>
-        <ul className="mb-4 mt-2 flex flex-col gap-1">
+        <ul className="mb-4 mt-2 flex flex-col">
           {PRODUCT_CATEGORIES.map((cat) => (
-            <li key={cat.anchor}>
+            <li key={cat.anchor} className="border-b border-ink/10">
               <Link
                 href={`/produits#${cat.anchor}`}
-                className="block rounded-md px-2 py-3 text-base text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="block py-4 text-lg text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 onClick={() => setMobileOpen(false)}
               >
                 {tp(cat.key)}
@@ -143,16 +147,19 @@ export function Header() {
           ))}
         </ul>
 
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="block rounded-md px-2 py-3 text-base font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-            onClick={() => setMobileOpen(false)}
-          >
-            {nav(item.key)}
-          </Link>
-        ))}
+        <ul className="flex flex-col">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.href} className="border-b border-ink/10">
+              <Link
+                href={item.href}
+                className="block py-4 text-lg font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                onClick={() => setMobileOpen(false)}
+              >
+                {nav(item.key)}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );
