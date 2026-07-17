@@ -22,3 +22,7 @@ Quando prisma/schema.prisma cambia:
    generano solo l'SQL, non lo applicano.
 4. Consegna sempre il file .sql generato in evidenza nello zip, così
    Robertin sa esattamente cosa eseguire su Neon.
+5. Ogni migration.sql futura deve essere scritta in forma idempotente
+   (CREATE TYPE/TABLE/CONSTRAINT protetti da controllo esistenza), non
+   solo la 0_init — vale come regola permanente per tutte le migration
+   successive.
