@@ -47,7 +47,15 @@
     "pillar2_title": "Des pharmaciens à votre écoute",
     "pillar2_text": "Nos pharmaciens échangent en permanence avec les professionnels de santé pour ajuster nos gammes aux besoins réels du terrain.",
     "pillar3_title": "Une ambition locale, des standards globaux",
-    "pillar3_text": "Nous investissons chaque année dans nos capacités de production et notre expertise scientifique pour renforcer l'accès à des soins de qualité au Cameroun."
+    "pillar3_text": "Nous investissons chaque année dans nos capacités de production et notre expertise scientifique pour renforcer l'accès à des soins de qualité au Cameroun.",
+    "trust_lab": "Laboratoire pharmaceutique — Yaoundé",
+    "trust_gmp": "Fabrication aux normes GMP",
+    "trust_ranges": "3 gammes de produits",
+    "trust_forum": "Forum ouvert aux pharmaciens et patients",
+    "forum_preview_title": "Derniers échanges",
+    "forum_preview_cta": "Voir le forum",
+    "forum_preview_empty_title": "Soyez les premiers à échanger",
+    "forum_preview_empty_cta": "Rejoindre le forum"
   },
   "about": {
     "title": "À propos de BuonaPharma",
@@ -99,6 +107,10 @@
   "footer": {
     "tagline": "Laboratoire pharmaceutique — Yaoundé, Cameroun",
     "address": "Rond point Damas, BP 16588 Yaoundé, Cameroun",
-    "copyright": "© {year} BuonaPharma. Tous droits réservés."
+    "copyright": "© {year} BuonaPharma. Tous droits réservés.",
+    "sitemap_title": "Plan du site",
+    "joinUs_title": "Rejoignez-nous",
+    "contact_title": "Contact",
+    "poweredBy": "Propulsé par"
   }
 }

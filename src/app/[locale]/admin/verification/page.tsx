@@ -22,7 +22,7 @@ export default async function VerificationQueue() {
   });
 
   return (
-    <main>
+    <main id="main-content">
       <h1>{t("verificationQueue")}</h1>
       <ul>
         {pending.map((u) => (

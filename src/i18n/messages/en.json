@@ -47,7 +47,15 @@
     "pillar2_title": "Pharmacists who listen",
     "pillar2_text": "Our pharmacists stay in constant dialogue with healthcare professionals to keep our ranges aligned with real needs on the ground.",
     "pillar3_title": "Local ambition, global standards",
-    "pillar3_text": "Every year we invest in our production capacity and scientific expertise to strengthen access to quality care in Cameroon."
+    "pillar3_text": "Every year we invest in our production capacity and scientific expertise to strengthen access to quality care in Cameroon.",
+    "trust_lab": "Pharmaceutical laboratory — Yaoundé",
+    "trust_gmp": "GMP-standard manufacturing",
+    "trust_ranges": "3 product ranges",
+    "trust_forum": "Forum open to pharmacists and patients",
+    "forum_preview_title": "Latest discussions",
+    "forum_preview_cta": "Visit the forum",
+    "forum_preview_empty_title": "Be the first to join the conversation",
+    "forum_preview_empty_cta": "Join the forum"
   },
   "about": {
     "title": "About BuonaPharma",
@@ -99,6 +107,10 @@
   "footer": {
     "tagline": "Pharmaceutical laboratory — Yaoundé, Cameroon",
     "address": "Rond point Damas, BP 16588 Yaoundé, Cameroon",
-    "copyright": "© {year} BuonaPharma. All rights reserved."
+    "copyright": "© {year} BuonaPharma. All rights reserved.",
+    "sitemap_title": "Sitemap",
+    "joinUs_title": "Join us",
+    "contact_title": "Contact",
+    "poweredBy": "Powered by"
   }
 }

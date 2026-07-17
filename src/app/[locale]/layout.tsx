@@ -56,6 +56,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${fraunces.variable} ${inter.variable} ${plexMono.variable}`}>
       <body className="bg-paper font-sans text-ink antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-forest focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        >
+          Aller au contenu
+        </a>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

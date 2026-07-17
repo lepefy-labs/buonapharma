@@ -9,6 +9,12 @@ const categories: { key: ProductCategory; anchor: string }[] = [
   { key: "cosmetics", anchor: "cosmetiques" },
 ];
 
+const categoryBadgeClasses: Record<ProductCategory, string> = {
+  pharma: "bg-forest/10 text-forest",
+  health: "bg-gold/10 text-gold",
+  cosmetics: "bg-forest-light/10 text-forest-light",
+};
+
 export default function ProductsPage() {
   const t = useTranslations("products");
   const locale = useLocale();
@@ -16,7 +22,7 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <section className="bg-paper px-6 py-16 md:py-24">
           <div className="mx-auto max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-gold">
@@ -52,7 +58,12 @@ export default function ProductsPage() {
                       key={product.slug}
                       className="rounded-lg border border-forest/10 bg-white p-6 transition hover:shadow-sm"
                     >
-                      <strong className="font-display text-base font-medium text-forest">
+                      <span
+                        className={`inline-block rounded-full px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest ${categoryBadgeClasses[product.category]}`}
+                      >
+                        {t(`${product.category}_title` as any)}
+                      </span>
+                      <strong className="mt-2 block font-display text-base font-medium text-forest">
                         {product.name}
                       </strong>
                       <p className="mt-2 text-sm text-ink/80">

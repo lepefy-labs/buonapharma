@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <section className="bg-paper px-6 py-16 md:py-24">
           <div className="mx-auto max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-gold">
