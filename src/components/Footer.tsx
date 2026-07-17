@@ -16,7 +16,7 @@ const JOIN_US_LINKS = [
 ] as const;
 
 const CONTACT = {
-  phone: "+237 XXX XXX XXX",
+  phone: "+39 059 472 1789",
   email: "info@buonapharma.com",
 };
 

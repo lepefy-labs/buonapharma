@@ -2,13 +2,11 @@ import { useTranslations } from "next-intl";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-// NOTE: il numero di telefono del vecchio sito (+39 059 472 1789, prefisso italiano)
-// era quasi certamente un refuso del template mai sostituito. Da confermare con il cliente
-// prima del lancio — per ora placeholder esplicito.
 const CONTACT = {
   address: "Rond point Damas, BP 16588 Yaoundé, Cameroun",
-  phone: "+237 XXX XXX XXX", // TODO: confermare numero reale con il cliente
+  phone: "+39 059 472 1789",
   email: "info@buonapharma.com",
+  niu: "M101812728012K",
 };
 
 const inputClasses =
@@ -53,6 +51,12 @@ export default function ContactPage() {
                   {t("email_title")}
                 </h3>
                 <p className="mt-2 text-sm text-ink/80">{CONTACT.email}</p>
+              </div>
+              <div className="rounded-lg border border-forest/10 bg-white p-6 transition hover:shadow-sm">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-gold">
+                  {t("niu_title")}
+                </h3>
+                <p className="mt-2 font-mono text-sm text-ink/80">{CONTACT.niu}</p>
               </div>
             </div>
 
