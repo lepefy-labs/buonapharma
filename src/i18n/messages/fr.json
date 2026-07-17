@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "healthLine": "Ligne Santé",
+    "cosmetics": "Cosmétiques",
+    "about": "À propos",
+    "careers": "Travailler avec nous",
+    "partners": "Devenir partenaire",
+    "contact": "Contact",
+    "forum": "Forum"
+  },
+  "forum": {
+    "spacePharmacists": "Espace Pharmaciens",
+    "spacePharmacistsDesc": "Échanges professionnels réservés aux pharmaciens vérifiés",
+    "spacePatients": "Espace Patients",
+    "spacePatientsDesc": "Posez vos questions, un pharmacien vérifié vous répondra",
+    "newPost": "Nouveau sujet",
+    "answered": "Répondu",
+    "pending": "En attente de réponse",
+    "translate": "Traduire",
+    "originalText": "Voir le texte original",
+    "verifiedBadge": "Pharmacien vérifié",
+    "pendingBadge": "Vérification en cours"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "signOut": "Se déconnecter",
+    "iAmPharmacist": "Je suis pharmacien",
+    "licenseNumber": "Numéro d'inscription à l'Ordre",
+    "licenseUpload": "Joindre un justificatif"
+  },
+  "admin": {
+    "verificationQueue": "File de vérification des pharmaciens",
+    "approve": "Approuver",
+    "reject": "Rejeter"
+  },
+  "disclaimer": "Les informations partagées sur ce forum ne remplacent pas une consultation médicale ou pharmaceutique en personne.",
+  "home": {
+    "hero_title": "Votre santé, notre exigence",
+    "hero_subtitle": "BuonaPharma conçoit, fabrique et distribue des médicaments, produits de santé et cosmétiques depuis Yaoundé, au service des pharmacies et des patients du Cameroun.",
+    "cta_products": "Découvrir nos produits",
+    "cta_forum": "Rejoindre le forum",
+    "pillar1_title": "Un laboratoire aux normes internationales",
+    "pillar1_text": "Nos équipes appliquent des standards de fabrication rigoureux, du contrôle qualité des matières premières jusqu'à la distribution finale.",
+    "pillar2_title": "Des pharmaciens à votre écoute",
+    "pillar2_text": "Nos pharmaciens échangent en permanence avec les professionnels de santé pour ajuster nos gammes aux besoins réels du terrain.",
+    "pillar3_title": "Une ambition locale, des standards globaux",
+    "pillar3_text": "Nous investissons chaque année dans nos capacités de production et notre expertise scientifique pour renforcer l'accès à des soins de qualité au Cameroun."
+  },
+  "about": {
+    "title": "À propos de BuonaPharma",
+    "intro": "BuonaPharma est un laboratoire pharmaceutique basé à Yaoundé, spécialisé dans la fabrication et la distribution de médicaments génériques, de compléments de santé et de produits cosmétiques.",
+    "mission_title": "Notre mission",
+    "mission_text": "Rendre accessibles, aux pharmacies comme aux patients, des produits de santé fiables et de qualité — fabriqués et contrôlés selon des exigences strictes, à des prix adaptés au marché local.",
+    "quality_title": "Notre exigence qualité",
+    "quality_text": "Chaque lot produit fait l'objet de contrôles à chaque étape, de la réception des matières premières à la mise sur le marché, en conformité avec les réglementations pharmaceutiques en vigueur.",
+    "team_title": "Notre équipe",
+    "team_text": "Une équipe de pharmaciens, techniciens de laboratoire et professionnels de santé, engagée au quotidien dans la conception et le contrôle de nos produits."
+  },
+  "products": {
+    "title": "Nos produits",
+    "intro": "Trois gammes complémentaires, pensées pour répondre aux besoins des pharmacies et des patients.",
+    "pharma_title": "Médicaments",
+    "pharma_text": "Une gamme de médicaments génériques couvrant les besoins courants des pharmacies, produits selon les normes de bonnes pratiques de fabrication.",
+    "health_title": "Ligne Santé",
+    "health_text": "Compléments et produits de soutien au quotidien : fer, magnésium, vitamines et acide folique, pour accompagner la santé de toute la famille.",
+    "cosmetics_title": "Cosmétiques",
+    "cosmetics_text": "Une gamme de soins du corps — gels douche et soins d'hygiène intime — formulée pour respecter les peaux sensibles.",
+    "learn_more": "En savoir plus"
+  },
+  "partners": {
+    "title": "Devenir partenaire",
+    "text": "Nous sommes en permanence à la recherche de nouveaux partenaires et investisseurs pour accompagner notre croissance.",
+    "cta_text": "Vous souhaitez investir ou collaborer avec BuonaPharma ? Écrivez-nous, en précisant votre profil et vos motivations — nous reviendrons vers vous rapidement.",
+    "cta_button": "Nous contacter"
+  },
+  "careers": {
+    "title": "Travailler avec nous",
+    "text": "Rejoignez une équipe engagée dans la santé au Cameroun. Nous recrutons régulièrement des professionnels passionnés — pharmaciens, techniciens, commerciaux.",
+    "list_item1": "Postuler à une offre en cours",
+    "list_item2": "Proposer une candidature spontanée",
+    "list_item3": "Nous transmettre votre CV",
+    "cta_button": "Envoyer ma candidature"
+  },
+  "contact": {
+    "title": "Nous contacter",
+    "text": "Une question, une commande, un partenariat ? Notre équipe vous répond.",
+    "address_title": "Adresse",
+    "phone_title": "Téléphone",
+    "email_title": "Email",
+    "form_name": "Nom et prénom",
+    "form_email": "Adresse email",
+    "form_phone": "Téléphone",
+    "form_message": "Message",
+    "form_submit": "Envoyer"
+  }
+}

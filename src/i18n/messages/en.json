@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "healthLine": "Health Line",
+    "cosmetics": "Cosmetics",
+    "about": "About",
+    "careers": "Careers",
+    "partners": "Become a Partner",
+    "contact": "Contact",
+    "forum": "Forum"
+  },
+  "forum": {
+    "spacePharmacists": "Pharmacists Space",
+    "spacePharmacistsDesc": "Professional discussions for verified pharmacists only",
+    "spacePatients": "Patients Space",
+    "spacePatientsDesc": "Ask your questions, a verified pharmacist will answer",
+    "newPost": "New topic",
+    "answered": "Answered",
+    "pending": "Awaiting answer",
+    "translate": "Translate",
+    "originalText": "View original text",
+    "verifiedBadge": "Verified pharmacist",
+    "pendingBadge": "Verification pending"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "signOut": "Sign out",
+    "iAmPharmacist": "I am a pharmacist",
+    "licenseNumber": "Professional license number",
+    "licenseUpload": "Attach supporting document"
+  },
+  "admin": {
+    "verificationQueue": "Pharmacist verification queue",
+    "approve": "Approve",
+    "reject": "Reject"
+  },
+  "disclaimer": "Information shared on this forum does not replace an in-person medical or pharmaceutical consultation.",
+  "home": {
+    "hero_title": "Your health, our standard",
+    "hero_subtitle": "BuonaPharma designs, manufactures and distributes medicines, health products and cosmetics from Yaoundé, serving pharmacies and patients across Cameroon.",
+    "cta_products": "Discover our products",
+    "cta_forum": "Join the forum",
+    "pillar1_title": "A laboratory built on international standards",
+    "pillar1_text": "Our teams apply rigorous manufacturing standards, from raw material quality control through to final distribution.",
+    "pillar2_title": "Pharmacists who listen",
+    "pillar2_text": "Our pharmacists stay in constant dialogue with healthcare professionals to keep our ranges aligned with real needs on the ground.",
+    "pillar3_title": "Local ambition, global standards",
+    "pillar3_text": "Every year we invest in our production capacity and scientific expertise to strengthen access to quality care in Cameroon."
+  },
+  "about": {
+    "title": "About BuonaPharma",
+    "intro": "BuonaPharma is a pharmaceutical laboratory based in Yaoundé, specializing in the manufacture and distribution of generic medicines, health supplements and cosmetic products.",
+    "mission_title": "Our mission",
+    "mission_text": "To make reliable, quality health products accessible to pharmacies and patients alike — manufactured and controlled to strict standards, at prices suited to the local market.",
+    "quality_title": "Our quality commitment",
+    "quality_text": "Every batch is checked at each stage, from raw material intake to market release, in line with applicable pharmaceutical regulations.",
+    "team_title": "Our team",
+    "team_text": "A team of pharmacists, laboratory technicians and healthcare professionals, committed daily to the design and quality control of our products."
+  },
+  "products": {
+    "title": "Our products",
+    "intro": "Three complementary ranges, designed to meet the needs of pharmacies and patients.",
+    "pharma_title": "Medicines",
+    "pharma_text": "A range of generic medicines covering pharmacies' everyday needs, manufactured according to good manufacturing practice standards.",
+    "health_title": "Health Line",
+    "health_text": "Everyday support products: iron, magnesium, vitamins and folic acid, to support the health of the whole family.",
+    "cosmetics_title": "Cosmetics",
+    "cosmetics_text": "A range of body care products — shower gels and intimate hygiene care — formulated to respect sensitive skin.",
+    "learn_more": "Learn more"
+  },
+  "partners": {
+    "title": "Become a partner",
+    "text": "We are always looking for new partners and investors to support our growth.",
+    "cta_text": "Interested in investing or collaborating with BuonaPharma? Write to us with your profile and motivations — we'll get back to you promptly.",
+    "cta_button": "Contact us"
+  },
+  "careers": {
+    "title": "Careers",
+    "text": "Join a team committed to health in Cameroon. We regularly recruit passionate professionals — pharmacists, technicians, sales staff.",
+    "list_item1": "Apply for an open position",
+    "list_item2": "Submit a spontaneous application",
+    "list_item3": "Send us your CV",
+    "cta_button": "Send my application"
+  },
+  "contact": {
+    "title": "Contact us",
+    "text": "A question, an order, a partnership? Our team is here to help.",
+    "address_title": "Address",
+    "phone_title": "Phone",
+    "email_title": "Email",
+    "form_name": "Full name",
+    "form_email": "Email address",
+    "form_phone": "Phone",
+    "form_message": "Message",
+    "form_submit": "Send"
+  }
+}

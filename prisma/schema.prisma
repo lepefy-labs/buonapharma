@@ -1,0 +1,104 @@
+// Schema Prisma — buonapharma.com
+// DB consigliato: Postgres su Neon (serverless, si integra nativamente con Vercel)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  PATIENT
+  PHARMACIST_PENDING   // registrato, in attesa di verifica admin
+  PHARMACIST_VERIFIED  // verificato, puo' rispondere ai pazienti e accedere allo spazio pharmaciens
+  ADMIN
+}
+
+enum ForumSpace {
+  PHARMACIENS // privato, solo tra farmacisti verificati
+  PATIENTS    // pubblico, domande dei pazienti, risposte solo da farmacisti verificati
+}
+
+enum Locale {
+  FR
+  EN
+}
+
+model User {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  passwordHash      String?
+  name              String
+  role              Role      @default(PATIENT)
+  locale            Locale    @default(FR)
+
+  // Campi specifici verifica farmacista
+  licenseNumber     String?   // numero d'iscrizione all'Ordre National des Pharmaciens du Cameroun
+  licenseDocumentUrl String?  // documento caricato per verifica manuale
+  verifiedAt        DateTime?
+  verifiedById      String?
+
+  posts             Post[]
+  comments          Comment[]
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  space     ForumSpace
+  slug      String     @unique
+  nameFr    String
+  nameEn    String
+  posts     Post[]
+}
+
+model Post {
+  id            String     @id @default(cuid())
+  space         ForumSpace
+  category      Category   @relation(fields: [categoryId], references: [id])
+  categoryId    String
+  author        User       @relation(fields: [authorId], references: [id])
+  authorId      String
+  title         String
+  body          String     @db.Text
+  originalLocale Locale
+  isAnswered    Boolean    @default(false) // per lo spazio PATIENTS: risposta da farmacista verificato ricevuta
+  comments      Comment[]
+  translations  Translation[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
+
+model Comment {
+  id            String     @id @default(cuid())
+  post          Post       @relation(fields: [postId], references: [id])
+  postId        String
+  author        User       @relation(fields: [authorId], references: [id])
+  authorId      String
+  body          String     @db.Text
+  originalLocale Locale
+  isFromPharmacist Boolean @default(false)
+  translations  Translation[]
+  createdAt     DateTime   @default(now())
+}
+
+// Cache delle traduzioni on-demand (evita di richiamare l'API DeepL ogni volta)
+model Translation {
+  id          String   @id @default(cuid())
+  targetLocale Locale
+  text        String   @db.Text
+
+  post        Post?    @relation(fields: [postId], references: [id])
+  postId      String?
+  comment     Comment? @relation(fields: [commentId], references: [id])
+  commentId   String?
+
+  createdAt   DateTime @default(now())
+
+  @@unique([postId, targetLocale])
+  @@unique([commentId, targetLocale])
+}
