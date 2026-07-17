@@ -24,11 +24,13 @@ export default async function HomePage() {
 
   const trustItems = [t("trust_lab"), t("trust_gmp"), t("trust_ranges"), t("trust_forum")];
 
-  const latestPosts = await prisma.post.findMany({
-    where: { space: "PATIENTS" },
-    take: 3,
-    orderBy: { createdAt: "desc" },
-  });
+  const latestPosts = await prisma.post
+    .findMany({
+      where: { space: "PATIENTS" },
+      take: 3,
+      orderBy: { createdAt: "desc" },
+    })
+    .catch(() => []);
 
   return (
     <>
