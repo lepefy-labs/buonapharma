@@ -17,6 +17,10 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+// Alcune pagine (admin/verification, forum/pharmaciens) leggono headers/cookie
+// lato server: il rendering statico non è compatibile, si passa a dynamic.
+export const dynamic = "force-dynamic";
+
 export default async function LocaleLayout({
   children,
   params: { locale },
