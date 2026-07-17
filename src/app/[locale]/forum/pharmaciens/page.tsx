@@ -17,6 +17,7 @@ export default async function PharmaciensSpace() {
   }
 
   const t = await getTranslations("forum");
+  const d = await getTranslations();
 
   const posts = await prisma.post.findMany({
     where: { space: "PHARMACIENS" },
@@ -27,25 +28,40 @@ export default async function PharmaciensSpace() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="font-display text-3xl font-medium text-forest md:text-4xl">
-          {t("spacePharmacists")}
-        </h1>
-        <p className="mt-4 text-lg text-ink/80">{t("spacePharmacistsDesc")}</p>
+      <main>
+        <section className="bg-paper px-6 py-16 md:py-24">
+          <div className="mx-auto max-w-3xl">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gold">
+              Forum
+            </span>
+            <h1 className="mt-3 font-display text-3xl font-medium text-forest md:text-4xl">
+              {t("spacePharmacists")}
+            </h1>
+            <p className="mt-4 text-lg text-ink/80">{t("spacePharmacistsDesc")}</p>
+          </div>
+        </section>
 
-        <ul className="mt-10 flex flex-col gap-4">
-          {posts.map((post) => (
-            <li
-              key={post.id}
-              className="rounded-lg border border-ink/10 bg-white p-5"
-            >
-              <strong className="font-display text-base font-medium text-forest">
-                {post.title}
-              </strong>{" "}
-              <span className="text-sm text-ink/60">— {post.author.name}</span>
-            </li>
-          ))}
-        </ul>
+        <section className="bg-paper-warm px-6 py-14">
+          <div className="mx-auto max-w-4xl">
+            <ul className="flex flex-col gap-4">
+              {posts.map((post) => (
+                <li
+                  key={post.id}
+                  className="rounded-lg border border-forest/10 bg-white p-6 transition hover:shadow-sm"
+                >
+                  <strong className="font-display text-base font-medium text-forest">
+                    {post.title}
+                  </strong>{" "}
+                  <span className="text-sm text-ink/60">— {post.author.name}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 rounded-lg bg-paper p-4">
+              <p className="text-xs text-ink/60">{d("disclaimer")}</p>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
