@@ -4,6 +4,8 @@ import { TranslateButton } from "@/components/TranslateButton";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+export const dynamic = "force-dynamic";
+
 // Spazio pubblico: chiunque può leggere e porre domande.
 // A livello di API (non mostrato qui), la creazione di un Comment con
 // isFromPharmacist=true è consentita solo se session.user.role === PHARMACIST_VERIFIED.

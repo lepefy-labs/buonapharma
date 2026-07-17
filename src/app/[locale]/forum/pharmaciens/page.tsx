@@ -5,6 +5,8 @@ import { getTranslations } from "next-intl/server";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+export const dynamic = "force-dynamic";
+
 // Spazio riservato: accessibile SOLO a utenti con ruolo PHARMACIST_VERIFIED o ADMIN.
 // Il controllo è lato server (non solo UI) per evitare che un PATIENT o
 // PHARMACIST_PENDING acceda ai contenuti semplicemente conoscendo l'URL.

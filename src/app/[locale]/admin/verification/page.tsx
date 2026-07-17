@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
+export const dynamic = "force-dynamic";
+
 // Coda di verifica: un ADMIN esamina numero d'albo + documento caricato
 // da ogni PHARMACIST_PENDING e lo promuove manualmente a PHARMACIST_VERIFIED.
 // (l'azione di approvazione va collegata a una server action / API route dedicata)
