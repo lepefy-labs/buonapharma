@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .dot-texture {
+    background-image: radial-gradient(circle, #103b3a 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(circle at 70% 30%, black 0%, transparent 70%);
+    mask-image: radial-gradient(circle at 70% 30%, black 0%, transparent 70%);
+  }
+}

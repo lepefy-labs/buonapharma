@@ -95,5 +95,10 @@
     "form_phone": "Téléphone",
     "form_message": "Message",
     "form_submit": "Envoyer"
+  },
+  "footer": {
+    "tagline": "Laboratoire pharmaceutique — Yaoundé, Cameroun",
+    "address": "Rond point Damas, BP 16588 Yaoundé, Cameroun",
+    "copyright": "© {year} BuonaPharma. Tous droits réservés."
   }
 }
