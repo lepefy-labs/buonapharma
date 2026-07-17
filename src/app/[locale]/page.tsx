@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -7,10 +7,10 @@ import { prisma } from "@/lib/prisma";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const nav = useTranslations("nav");
-  const t = useTranslations("home");
-  const tp = useTranslations("products");
-  const tf = useTranslations("forum");
+  const nav = await getTranslations("nav");
+  const t = await getTranslations("home");
+  const tp = await getTranslations("products");
+  const tf = await getTranslations("forum");
 
   const pillars = [
     { title: t("pillar1_title"), text: t("pillar1_text") },
