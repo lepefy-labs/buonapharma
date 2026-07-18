@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/Logo";
@@ -28,6 +28,15 @@ export function Header() {
   const scrolled = useScrollPosition(20);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setMobileOpen(false);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10">
@@ -133,6 +142,16 @@ export function Header() {
             : "pointer-events-none translate-x-4 opacity-0"
         }`}
       >
+        <button
+          type="button"
+          onClick={() => setMobileOpen(false)}
+          aria-label="Fermer le menu"
+          tabIndex={mobileOpen ? 0 : -1}
+          className="fixed right-4 top-4 z-[60] flex h-11 w-11 items-center justify-center rounded-full bg-paper text-2xl leading-none text-forest shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+
         <span className="font-mono text-xs uppercase tracking-widest text-gold">
           {nav("products")}
         </span>
