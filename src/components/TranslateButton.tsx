@@ -38,9 +38,14 @@ export function TranslateButton({ postId, commentId, targetLocale, originalText 
   };
 
   return (
-    <div>
-      <p>{translated ?? originalText}</p>
-      <button onClick={handleTranslate} disabled={loading}>
+    <div className="min-w-0">
+      <p className="break-words">{translated ?? originalText}</p>
+      <button
+        type="button"
+        onClick={handleTranslate}
+        disabled={loading}
+        className="mt-2 flex min-h-[44px] items-center text-sm font-medium text-forest underline-offset-4 hover:underline disabled:opacity-60"
+      >
         {loading ? "..." : translated ? t("originalText") : t("translate")}
       </button>
     </div>

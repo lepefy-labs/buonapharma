@@ -21,13 +21,23 @@ export function VerificationActions({ userId }: { userId: string }) {
   }
 
   return (
-    <>
-      <button disabled={pending} onClick={() => handleAction("approve")}>
+    <div className="flex flex-wrap gap-2">
+      <button
+        type="button"
+        disabled={pending}
+        onClick={() => handleAction("approve")}
+        className="min-h-[44px] min-w-[44px] rounded-full bg-forest px-5 py-2 text-sm font-medium text-paper transition hover:bg-forest-light disabled:opacity-60"
+      >
         {t("approve")}
       </button>
-      <button disabled={pending} onClick={() => handleAction("reject")}>
+      <button
+        type="button"
+        disabled={pending}
+        onClick={() => handleAction("reject")}
+        className="min-h-[44px] min-w-[44px] rounded-full border border-forest/30 px-5 py-2 text-sm font-medium text-forest transition hover:bg-forest/5 disabled:opacity-60"
+      >
         {t("reject")}
       </button>
-    </>
+    </div>
   );
 }
