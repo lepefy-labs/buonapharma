@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { useSession, signOut } from "next-auth/react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/Logo";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -17,8 +16,6 @@ const PRODUCT_CATEGORIES = [
 const NAV_ITEMS = [
   { href: "/forum", key: "forum" },
   { href: "/a-propos", key: "about" },
-  { href: "/devenir-partenaire", key: "partners" },
-  { href: "/travailler-avec-nous", key: "careers" },
   { href: "/contact", key: "contact" },
 ] as const;
 
@@ -28,10 +25,6 @@ const linkClass =
 export function Header() {
   const nav = useTranslations("nav");
   const tp = useTranslations("products");
-  const ta = useTranslations("auth");
-  const tadmin = useTranslations("admin");
-  const { data: session } = useSession();
-  const user = session?.user as { name?: string | null; role?: string } | undefined;
   const scrolled = useScrollPosition(20);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -100,27 +93,6 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          {user ? (
-            <div className="flex items-center gap-3 text-sm">
-              <span className="text-ink/80">{user.name}</span>
-              {user.role === "ADMIN" && (
-                <Link href="/admin/verification" className={linkClass}>
-                  {tadmin("verificationQueue")}
-                </Link>
-              )}
-              <button
-                type="button"
-                onClick={() => signOut()}
-                className={`${linkClass} cursor-pointer`}
-              >
-                {ta("signOut")}
-              </button>
-            </div>
-          ) : (
-            <Link href="/auth/sign-in" className={linkClass}>
-              {ta("signIn")}
-            </Link>
-          )}
           <LanguageSwitcher />
         </div>
 
@@ -190,47 +162,6 @@ export function Header() {
               </Link>
             </li>
           ))}
-        </ul>
-
-        <ul className="mt-2 flex flex-col">
-          {user ? (
-            <>
-              <li className="border-b border-ink/10 py-4 text-lg text-ink">{user.name}</li>
-              {user.role === "ADMIN" && (
-                <li className="border-b border-ink/10">
-                  <Link
-                    href="/admin/verification"
-                    className="block py-4 text-lg font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {tadmin("verificationQueue")}
-                  </Link>
-                </li>
-              )}
-              <li className="border-b border-ink/10">
-                <button
-                  type="button"
-                  className="block w-full py-4 text-left text-lg font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                  onClick={() => {
-                    setMobileOpen(false);
-                    signOut();
-                  }}
-                >
-                  {ta("signOut")}
-                </button>
-              </li>
-            </>
-          ) : (
-            <li className="border-b border-ink/10">
-              <Link
-                href="/auth/sign-in"
-                className="block py-4 text-lg font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                onClick={() => setMobileOpen(false)}
-              >
-                {ta("signIn")}
-              </Link>
-            </li>
-          )}
         </ul>
 
         <div className="mt-8">

@@ -2,8 +2,6 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -29,7 +27,6 @@ export default async function PharmaciensSpace() {
 
   return (
     <>
-      <Header />
       <main id="main-content">
         <section className="bg-paper px-6 py-16 md:py-24">
           <div className="mx-auto max-w-3xl">
@@ -65,7 +62,6 @@ export default async function PharmaciensSpace() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

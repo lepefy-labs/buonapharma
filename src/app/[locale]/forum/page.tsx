@@ -1,7 +1,5 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 export default function ForumHub() {
   const t = useTranslations("forum");
@@ -9,7 +7,6 @@ export default function ForumHub() {
 
   return (
     <>
-      <Header />
       <main id="main-content">
         <section className="bg-paper px-6 py-16 md:py-24">
           <div className="mx-auto max-w-3xl">
@@ -55,7 +52,6 @@ export default function ForumHub() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
