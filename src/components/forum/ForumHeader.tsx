@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useSession, signOut } from "next-auth/react";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 const linkClass =
   "group relative text-sm font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold";
@@ -14,6 +14,7 @@ export function ForumHeader() {
   const tadmin = useTranslations("admin");
   const { data: session } = useSession();
   const user = session?.user as { name?: string | null; role?: string } | undefined;
+  const pathname = usePathname();
 
   const isVerified = user?.role === "PHARMACIST_VERIFIED" || user?.role === "ADMIN";
   const isPending = user?.role === "PHARMACIST_PENDING";
@@ -60,11 +61,14 @@ export function ForumHeader() {
             </div>
           ) : (
             <div className="flex items-center gap-3">
-              <Link href="/auth/sign-in" className={linkClass}>
+              <Link
+                href={`/auth/sign-in?callbackUrl=${encodeURIComponent(pathname)}`}
+                className={linkClass}
+              >
                 {ta("signIn")}
               </Link>
               <Link
-                href="/auth/sign-up"
+                href={`/auth/sign-up?callbackUrl=${encodeURIComponent(pathname)}`}
                 className="rounded-full bg-forest px-4 py-2 text-sm font-medium text-paper transition hover:bg-forest-light"
               >
                 {ta("signUp")}
