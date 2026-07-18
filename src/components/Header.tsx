@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "@/components/Logo";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 const PRODUCT_CATEGORIES = [
@@ -93,6 +94,10 @@ export function Header() {
           ))}
         </nav>
 
+        <div className="hidden md:block">
+          <LanguageSwitcher />
+        </div>
+
         <button
           type="button"
           className="flex h-10 w-10 items-center justify-center rounded-md text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold md:hidden"
@@ -160,6 +165,10 @@ export function Header() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-8">
+          <LanguageSwitcher />
+        </div>
       </div>
     </header>
   );
