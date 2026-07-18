@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import { VerificationActions } from "@/components/VerificationActions";
 
 export const dynamic = "force-dynamic";
 
@@ -30,8 +31,7 @@ export default async function VerificationQueue() {
         {pending.map((u) => (
           <li key={u.id}>
             {u.name} — {u.email} — {t("licenseNumber")}: {u.licenseNumber ?? "—"}
-            <button>{t("approve")}</button>
-            <button>{t("reject")}</button>
+            <VerificationActions userId={u.id} />
           </li>
         ))}
       </ul>
