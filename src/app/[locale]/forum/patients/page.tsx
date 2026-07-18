@@ -1,17 +1,20 @@
+import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getTranslations } from "next-intl/server";
 import { TranslateButton } from "@/components/TranslateButton";
+import { Link } from "@/i18n/navigation";
 
 export const dynamic = "force-dynamic";
 
 // Spazio pubblico: chiunque può leggere e porre domande.
-// A livello di API (non mostrato qui), la creazione di un Comment con
-// isFromPharmacist=true è consentita solo se session.user.role === PHARMACIST_VERIFIED.
+// A livello di API, la creazione di un Comment con isFromPharmacist=true è
+// derivata dal ruolo dell'autore (PHARMACIST_VERIFIED/ADMIN), mai dal client.
 export default async function PatientsSpace({
   params: { locale },
 }: {
   params: { locale: string };
 }) {
+  const session = await auth();
   const t = await getTranslations("forum");
   const d = await getTranslations();
   const targetLocale = locale === "fr" ? "EN" : "FR";
@@ -39,17 +42,34 @@ export default async function PatientsSpace({
 
         <section className="bg-paper-warm px-6 py-14">
           <div className="mx-auto max-w-4xl">
+            <div className="mb-6 flex justify-end">
+              <Link
+                href={session ? "/forum/patients/new" : "/auth/sign-in?callbackUrl=/forum/patients/new"}
+                className="inline-block rounded-full bg-forest px-6 py-3 text-sm font-medium text-paper transition hover:bg-forest-light"
+              >
+                {session ? t("newPost") : t("signInToPost")}
+              </Link>
+            </div>
+
             <ul className="flex flex-col gap-4">
               {posts.map((post) => (
                 <li
                   key={post.id}
                   className="rounded-lg border border-forest/10 bg-white p-6 transition hover:shadow-sm"
                 >
-                  <TranslateButton
-                    postId={post.id}
-                    targetLocale={targetLocale as "FR" | "EN"}
-                    originalText={post.body}
-                  />
+                  <Link
+                    href={`/forum/patients/${post.id}`}
+                    className="font-display text-base font-medium text-forest hover:underline"
+                  >
+                    {post.title}
+                  </Link>
+                  <div className="mt-2">
+                    <TranslateButton
+                      postId={post.id}
+                      targetLocale={targetLocale as "FR" | "EN"}
+                      originalText={post.body}
+                    />
+                  </div>
                   <span className="mt-3 inline-block font-mono text-xs uppercase tracking-widest text-gold">
                     {post.isAnswered ? t("answered") : t("pending")}
                   </span>

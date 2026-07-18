@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -42,15 +43,27 @@ export default async function PharmaciensSpace() {
 
         <section className="bg-paper-warm px-6 py-14">
           <div className="mx-auto max-w-4xl">
+            <div className="mb-6 flex justify-end">
+              <Link
+                href="/forum/pharmaciens/new"
+                className="inline-block rounded-full bg-forest px-6 py-3 text-sm font-medium text-paper transition hover:bg-forest-light"
+              >
+                {t("newPost")}
+              </Link>
+            </div>
+
             <ul className="flex flex-col gap-4">
               {posts.map((post) => (
                 <li
                   key={post.id}
                   className="rounded-lg border border-forest/10 bg-white p-6 transition hover:shadow-sm"
                 >
-                  <strong className="font-display text-base font-medium text-forest">
+                  <Link
+                    href={`/forum/pharmaciens/${post.id}`}
+                    className="font-display text-base font-medium text-forest hover:underline"
+                  >
                     {post.title}
-                  </strong>{" "}
+                  </Link>{" "}
                   <span className="text-sm text-ink/60">— {post.author.name}</span>
                 </li>
               ))}
