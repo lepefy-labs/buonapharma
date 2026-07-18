@@ -18,6 +18,7 @@ const JOIN_US_LINKS = [
 const CONTACT = {
   phone: "+39 059 472 1789",
   email: "info@buonapharma.com",
+  niu: "M101812728012K",
 };
 
 const columnLinkClass =
@@ -36,6 +37,9 @@ export function Footer() {
           <p className="max-w-xs text-sm text-paper/80">{t("tagline")}</p>
           <span className="font-mono text-xs uppercase tracking-widest text-gold">
             {t("address")}
+          </span>
+          <span className="font-mono text-xs text-paper/70">
+            {t("niu")}: {CONTACT.niu}
           </span>
         </div>
 
