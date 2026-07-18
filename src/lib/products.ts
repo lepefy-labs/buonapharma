@@ -8,58 +8,100 @@ export type Product = {
   descriptionEn: string;
 };
 
+export type Pathology = {
+  slug: string;
+  nameFr: string;
+  nameEn: string;
+  medicines: {
+    name: string;
+    dosages: string[]; // es. ["1,25mg", "2,5mg", "3,25mg", "5mg"]
+  }[];
+};
+
+export const pathologies: Pathology[] = [
+  {
+    slug: "paludisme",
+    nameFr: "Paludisme",
+    nameEn: "Malaria",
+    medicines: [
+      { name: "Artésunate", dosages: [] },
+      { name: "Artésunate + Dihydroartémisinine phosphate", dosages: [] },
+    ],
+  },
+  {
+    slug: "hypertension",
+    nameFr: "Hypertension",
+    nameEn: "Hypertension",
+    medicines: [
+      { name: "Bisoprolol", dosages: ["1,25mg", "2,5mg", "3,25mg", "5mg"] },
+      { name: "Acide acétylsalicylique", dosages: ["100mg"] },
+      { name: "Amlodipine", dosages: ["5mg", "10mg"] },
+      { name: "Ramipril", dosages: ["2,5mg", "5mg", "10mg"] },
+      { name: "Doxazosine", dosages: ["2mg", "4mg"] },
+    ],
+  },
+  {
+    slug: "diabete",
+    nameFr: "Diabète",
+    nameEn: "Diabetes",
+    medicines: [
+      { name: "Metformine", dosages: ["500mg", "850mg", "1000mg"] },
+      { name: "Gliclazide", dosages: ["30mg", "60mg"] },
+    ],
+  },
+  {
+    slug: "anti-inflammatoires-antalgiques",
+    nameFr: "Anti-inflammatoires et antalgiques",
+    nameEn: "Anti-inflammatories and pain relief",
+    medicines: [
+      { name: "Tramadol", dosages: ["50mg", "100mg"] },
+      { name: "Kétorolac", dosages: ["30mg"] },
+      { name: "Ibuprofène", dosages: ["200mg", "400mg", "600mg"] },
+      { name: "Kétoprofène", dosages: ["80mg"] },
+      { name: "Nimésulide", dosages: ["100mg"] },
+      { name: "Paracétamol", dosages: ["500mg", "1000mg"] },
+    ],
+  },
+  {
+    slug: "gastroprotecteurs",
+    nameFr: "Gastroprotecteurs",
+    nameEn: "Gastric protection",
+    medicines: [
+      { name: "Lansoprazole", dosages: ["15mg", "30mg"] },
+      { name: "Oméprazole", dosages: ["10mg", "20mg"] },
+      { name: "Pantoprazole", dosages: ["20mg", "40mg"] },
+      { name: "Ranitidine", dosages: ["150mg", "300mg"] },
+    ],
+  },
+  {
+    slug: "antibiotiques",
+    nameFr: "Antibiotiques",
+    nameEn: "Antibiotics",
+    medicines: [
+      { name: "Benzylpénicilline benzathine", dosages: ["1,2 M UI", "2,4 M UI"] },
+      { name: "Céfotaxime", dosages: ["1g/4ml"] },
+      { name: "Amoxicilline", dosages: ["1g"] },
+      { name: "Ciprofloxacine", dosages: ["250mg", "500mg", "750mg"] },
+      { name: "Lévofloxacine", dosages: ["250mg", "500mg", "750mg"] },
+      { name: "Azithromycine", dosages: ["500mg"] },
+      { name: "Clarithromycine", dosages: ["500mg"] },
+      { name: "Amoxicilline + acide clavulanique", dosages: ["1g"] },
+    ],
+  },
+  {
+    slug: "vitamines",
+    nameFr: "Vitamines",
+    nameEn: "Vitamins",
+    medicines: [
+      { name: "Acide folique", dosages: ["1mg", "5mg"] },
+      { name: "Fer + acide folique", dosages: ["sirop", "flacon"] },
+    ],
+  },
+];
+
 // Nomi di prodotto invariati (identità di marca), descrizioni riscritte da zero
 // — nessun testo copiato dal sito precedente.
 export const products: Product[] = [
-  {
-    slug: "tramabuona",
-    category: "pharma",
-    name: "Tramabuona",
-    descriptionFr: "Antalgique destiné à la prise en charge de la douleur modérée à sévère, disponible en pharmacie sur prescription.",
-    descriptionEn: "Painkiller for the management of moderate to severe pain, available in pharmacies on prescription.",
-  },
-  {
-    slug: "gentabuona",
-    category: "pharma",
-    name: "Gentabuona",
-    descriptionFr: "Antibiotique à usage topique, indiqué dans le traitement des infections cutanées localisées.",
-    descriptionEn: "Topical antibiotic, indicated for the treatment of localized skin infections.",
-  },
-  {
-    slug: "ecovaril",
-    category: "pharma",
-    name: "Ecovaril",
-    descriptionFr: "Traitement antifongique destiné aux mycoses cutanées courantes.",
-    descriptionEn: "Antifungal treatment for common skin mycoses.",
-  },
-  {
-    slug: "clobederm",
-    category: "pharma",
-    name: "Clobèderm",
-    descriptionFr: "Crème dermocorticoïde indiquée dans la prise en charge de certaines affections cutanées inflammatoires.",
-    descriptionEn: "Dermocorticoid cream indicated for the management of certain inflammatory skin conditions.",
-  },
-  {
-    slug: "betabuona",
-    category: "pharma",
-    name: "Betabuona",
-    descriptionFr: "Traitement à visée cardiovasculaire, à utiliser selon les recommandations du prescripteur.",
-    descriptionEn: "Cardiovascular treatment, to be used according to the prescriber's recommendations.",
-  },
-  {
-    slug: "buonadol",
-    category: "pharma",
-    name: "Buonadol",
-    descriptionFr: "Antalgique et antipyrétique d'usage courant pour le soulagement de la douleur légère à modérée et de la fièvre.",
-    descriptionEn: "Everyday painkiller and antipyretic for the relief of mild to moderate pain and fever.",
-  },
-  {
-    slug: "fluovaril",
-    category: "pharma",
-    name: "Fluovaril",
-    descriptionFr: "Traitement antiviral destiné à certaines infections courantes, sur prescription médicale.",
-    descriptionEn: "Antiviral treatment for certain common infections, on medical prescription.",
-  },
   {
     slug: "ferbuona",
     category: "health",
