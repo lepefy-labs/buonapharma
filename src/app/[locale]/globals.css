@@ -8,11 +8,68 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background: #f5f7f1;
+}
+
+::selection {
+  background: #c99a3e;
+  color: #103b3a;
+}
+
+@layer components {
+  .bp-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6;
+  }
+
+  .bp-eyebrow {
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-gold;
+  }
+
+  .bp-title {
+    @apply font-display font-medium leading-[1.08] text-forest;
+  }
+
+  .bp-card {
+    @apply rounded-2xl border border-forest/10 bg-white shadow-[0_10px_35px_rgba(16,59,58,0.05)];
+  }
+
+  .bp-button-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-forest px-5 py-3 text-sm font-medium text-paper transition hover:bg-forest-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2;
+  }
+
+  .bp-button-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-gold/70 bg-white px-5 py-3 text-sm font-medium text-forest transition hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2;
+  }
+
+  .bp-chip {
+    @apply inline-flex min-h-9 items-center rounded-full border border-forest/15 bg-white px-3 text-xs font-medium text-forest transition hover:border-forest/30 hover:bg-paper-warm;
+  }
+}
+
 @layer utilities {
   .dot-texture {
     background-image: radial-gradient(circle, #103b3a 1.5px, transparent 1.5px);
     background-size: 22px 22px;
     -webkit-mask-image: radial-gradient(circle at 70% 30%, black 0%, transparent 70%);
     mask-image: radial-gradient(circle at 70% 30%, black 0%, transparent 70%);
+  }
+
+  .bp-grid-texture {
+    background-image:
+      linear-gradient(rgba(16, 59, 58, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 59, 58, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
